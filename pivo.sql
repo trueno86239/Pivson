@@ -1,4 +1,8 @@
-CREATE TABLE země (
+CREATE DATABASE IF NOT EXISTS moje_databaze;
+SHOW DATABASES;
+
+
+CREATE TABLE zeme (
     idzemě INT PRIMARY KEY,
     název VARCHAR(45) NOT NULL
 );
@@ -7,13 +11,13 @@ CREATE TABLE MestoGPS (
     MestoID INT PRIMARY KEY,
     ZS VARCHAR(45) NOT NULL,
     ZD VARCHAR(45) NOT NULL,
-    země_idzemě INT NOT NULL,
-    FOREIGN KEY (země_idzemě) REFERENCES země(idzemě)
+    zeme_idzeme INT NOT NULL,
+    FOREIGN KEY (zeme_idzeme) REFERENCES zeme(idzeme)
 );
 
 CREATE TABLE pivo (
     idpivo INT PRIMARY KEY,
-    název VARCHAR(45) NOT NULL,
+    nazev VARCHAR(45) NOT NULL,
     pivocol VARCHAR(45) NOT NULL
 );
 
